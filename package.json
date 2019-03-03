@@ -1,14 +1,21 @@
 {
-  "name": "creat-bread-app",
+  "name": "create-bread-app",
   "version": "0.1.0",
   "repository": "https://github.com/Himself65/creat-bread-app.git",
   "license": "MIT",
   "author": "himself65 <himself6565@gmail.com>",
-  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib/creat-bread-app.js"
+  ],
+  "scripts": {
+    "dev:relink": "yarn unlink && yarn link"
+  },
   "dependencies": {
     "@types/fs-extra": "^5.0.5",
     "chalk": "^2.4.2",
     "commander": "^2.19.0",
+    "cross-spawn": "^6.0.5",
     "fs-extra": "^7.0.1",
     "validate-npm-package-name": "^3.0.0"
   },
@@ -22,6 +29,6 @@
     "eslint-plugin-standard": "^4.0.0"
   },
   "bin": {
-    "creat-bread-app": "./index.js"
+    "create-bread-app": "./index.js"
   }
 }
