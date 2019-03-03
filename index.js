@@ -20,4 +20,4 @@ if (major < 8) {
   process.exit(1)
 }
 
-require('./lib/creat-bread-app')
+require('./lib/create-bread-app')
