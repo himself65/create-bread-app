@@ -6,7 +6,8 @@
   "author": "himself65 <himself6565@gmail.com>",
   "files": [
     "index.js",
-    "lib/creat-bread-app.js"
+    "lib/creat-bread-app.js",
+    "static"
   ],
   "scripts": {
     "dev:relink": "yarn unlink && yarn link"
