@@ -18,6 +18,13 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
+"@types/cross-spawn@^6.0.0":
+  version "6.0.0"
+  resolved "http://registry.npm.taobao.org/@types/cross-spawn/download/@types/cross-spawn-6.0.0.tgz#320aaf1d1a12979f1b84fe7a5590a7e860bf3a80"
+  integrity sha1-MgqvHRoSl58bhP56VZCn6GC/OoA=
+  dependencies:
+    "@types/node" "*"
+
 "@types/fs-extra@^5.0.5":
   version "5.0.5"
   resolved "http://registry.npm.taobao.org/@types/fs-extra/download/@types/fs-extra-5.0.5.tgz#080d90a792f3fa2c5559eb44bd8ef840aae9104b"
