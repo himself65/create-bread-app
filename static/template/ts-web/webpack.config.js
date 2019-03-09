@@ -29,13 +29,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        use: 'happypack/loader?id=ts',
+        test: /\.tsx?$/,
+        use: 'ts-loader',
         exclude: /node_modules/
       },
       {
-        test: /\.js$/,
-        use: 'happypack/loader?id=js',
+        test: /\.jsx?$/,
+        use: 'babel-loader',
         exclude: /node_modules/
       },
       {
