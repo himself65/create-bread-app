@@ -74,16 +74,19 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'main.min.css'
     })
   ],
   optimization: {
     minimizer: [
-      new TerserWebpackPlugin({
+      isProd && new TerserWebpackPlugin({
         cache: true,
         parallel: true,
         sourceMap: true
       }),
-      new OptimizeCssAssetsPlugin({
+      isProd && new OptimizeCssAssetsPlugin({
         assetNameRegExp: /\.css$/g,
         cssProcessor: require('cssnano'),
         cssProcessorOptions: {
@@ -98,5 +101,11 @@ module.exports = {
   performance: {
     hints: false
   },
-  stats: { children: false }
+  stats: { children: false },
+  devServer: {
+    publicPath: '/static/',
+    host: process.env.HOST || 'localhost',
+    port: process.env.PORT || '8080',
+    disableHostCheck: true
+  }
 }
