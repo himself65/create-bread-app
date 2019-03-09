@@ -12,14 +12,18 @@
   },
   "devDependencies": {
     "babel-loader": "^8.0.5",
+    "cssnano": "^4.1.10",
     "fork-ts-checker-webpack-plugin": "^1.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.5.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "terser-webpack-plugin": "^1.2.3",
     "ts-loader": "^5.3.3",
     "tslint": "^5.13.1",
     "tslint-config-standard": "^8.0.1",
     "typescript": "^3.3.3333",
+    "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"

@@ -3,6 +3,8 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TerserWebpackPlugin = require('terser-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 const extractCSS = isProd || process.env.TARGET === 'development'
@@ -19,7 +21,7 @@ const cssLoaders = [
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.ts'),
   output: {
-    filename: '[name].js',
+    filename: 'bundle.[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/static/'
   },
@@ -74,6 +76,25 @@ module.exports = {
       template: 'index.html'
     })
   ],
+  optimization: {
+    minimizer: [
+      new TerserWebpackPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCssAssetsPlugin({
+        assetNameRegExp: /\.css$/g,
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: {
+          discardComments: { removeAll: true },
+          postcssZindex: false,
+          reduceIdents: false
+        },
+        canPrint: false
+      })
+    ]
+  },
   performance: {
     hints: false
   },
