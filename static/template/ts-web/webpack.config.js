@@ -2,6 +2,7 @@ const path = require('path')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const isProd = process.env.NODE_ENV === 'production'
 const extractCSS = isProd || process.env.TARGET === 'development'
@@ -67,7 +68,10 @@ module.exports = {
     new FriendlyErrorsWebpackPlugin(),
     new ForkTsCheckerWebpackPlugin({
       checkSyntacticErrors: true,
-      tsconfig: path.resolve(__dirname, '../tsconfig.json')
+      tsconfig: path.resolve(__dirname, './tsconfig.json')
+    }),
+    new HtmlWebpackPlugin({
+      filename: './static/index.html'
     })
   ],
   performance: {
