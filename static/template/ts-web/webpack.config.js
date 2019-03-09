@@ -80,12 +80,12 @@ module.exports = {
   ],
   optimization: {
     minimizer: [
-      isProd && new TerserWebpackPlugin({
+      new TerserWebpackPlugin({
         cache: true,
         parallel: true,
         sourceMap: true
       }),
-      isProd && new OptimizeCssAssetsPlugin({
+      new OptimizeCssAssetsPlugin({
         assetNameRegExp: /\.css$/g,
         cssProcessor: require('cssnano'),
         cssProcessorOptions: {
