@@ -71,7 +71,7 @@ module.exports = {
       tsconfig: path.resolve(__dirname, './tsconfig.json')
     }),
     new HtmlWebpackPlugin({
-      filename: './static/index.html'
+      template: 'index.html'
     })
   ],
   performance: {
