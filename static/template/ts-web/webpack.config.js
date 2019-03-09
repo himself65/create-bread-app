@@ -22,8 +22,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.ts'),
   output: {
     filename: 'bundle.[name].[hash].js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/static/'
+    path: path.resolve(__dirname, 'dist')
   },
   mode: isProd ? 'production' : 'development',
   resolve: {
@@ -103,7 +102,6 @@ module.exports = {
   },
   stats: { children: false },
   devServer: {
-    publicPath: '/static/',
     host: process.env.HOST || 'localhost',
     port: process.env.PORT || '8080',
     disableHostCheck: true
