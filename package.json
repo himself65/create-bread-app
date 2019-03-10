@@ -16,8 +16,10 @@
     "@types/fs-extra": "^5.0.5",
     "chalk": "^2.4.2",
     "commander": "^2.19.0",
+    "cross-env": "^5.2.0",
     "cross-spawn": "^6.0.5",
     "fs-extra": "^7.0.1",
+    "rimraf": "^2.6.3",
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
